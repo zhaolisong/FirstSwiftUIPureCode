@@ -30,9 +30,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         //将tableview添加到view试图上
         self.view?.addSubview(self.tableView!)
+        //decelerationRate 属性调整 UIScrollView、UITableView、UICollectionView 滚动数据
+        //使用
+        
     }
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return 20; }
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return 200; }
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
         cell.textLabel!.text = String(format:"0000%i", indexPath.row+1)
@@ -69,6 +72,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             //    DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(3/*second*/)) {
             //        self.dismiss(animated: true, completion: nil)
             //    }
+        }
+        if (indexPath.row==1) {
+            let base2DTextVC = Base2DTextViewController()
+            self.navigationController?.pushViewController(base2DTextVC , animated: true)
         }
         return indexPath;
     }

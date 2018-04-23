@@ -15,6 +15,9 @@
 		671753B920847C3200ADCD8D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 671753B820847C3100ADCD8D /* Default-568h@2x.png */; };
 		6723EE93208C258100BA8590 /* Base2DViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6723EE92208C258100BA8590 /* Base2DViewController.swift */; };
 		6723EE95208CCA0F00BA8590 /* pic_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6723EE94208CCA0F00BA8590 /* pic_icon.png */; };
+		6723EE9A208CEBD300BA8590 /* font.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6723EE99208CEBD300BA8590 /* font.txt */; };
+		6723EE9C208CEF1600BA8590 /* Base2DTextUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6723EE9B208CEF1600BA8590 /* Base2DTextUIView.swift */; };
+		6723EE9E208CEF5B00BA8590 /* Base2DTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6723EE9D208CEF5B00BA8590 /* Base2DTextViewController.swift */; };
 		67420A322086F03F002D0EC0 /* Base2DUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67420A312086F03F002D0EC0 /* Base2DUIView.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +53,9 @@
 		671753B820847C3100ADCD8D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6723EE92208C258100BA8590 /* Base2DViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base2DViewController.swift; sourceTree = "<group>"; };
 		6723EE94208CCA0F00BA8590 /* pic_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic_icon.png; sourceTree = "<group>"; };
+		6723EE99208CEBD300BA8590 /* font.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = font.txt; sourceTree = "<group>"; };
+		6723EE9B208CEF1600BA8590 /* Base2DTextUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base2DTextUIView.swift; path = FirstSwiftUIPureCode/view/Base2DTextUIView.swift; sourceTree = SOURCE_ROOT; };
+		6723EE9D208CEF5B00BA8590 /* Base2DTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base2DTextViewController.swift; sourceTree = "<group>"; };
 		67420A312086F03F002D0EC0 /* Base2DUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base2DUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +108,7 @@
 		671753852084512800ADCD8D /* FirstSwiftUIPureCode */ = {
 			isa = PBXGroup;
 			children = (
+				6723EE98208CEB7B00BA8590 /* help */,
 				6723EE96208CCA9B00BA8590 /* resources */,
 				67420A352086F065002D0EC0 /* model */,
 				67420A342086F053002D0EC0 /* controller */,
@@ -147,9 +154,18 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		6723EE98208CEB7B00BA8590 /* help */ = {
+			isa = PBXGroup;
+			children = (
+				6723EE99208CEBD300BA8590 /* font.txt */,
+			);
+			path = help;
+			sourceTree = "<group>";
+		};
 		67420A332086F046002D0EC0 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				6723EE9B208CEF1600BA8590 /* Base2DTextUIView.swift */,
 				67420A312086F03F002D0EC0 /* Base2DUIView.swift */,
 			);
 			path = view;
@@ -160,6 +176,7 @@
 			children = (
 				671753B420846DD500ADCD8D /* ViewController.swift */,
 				6723EE92208C258100BA8590 /* Base2DViewController.swift */,
+				6723EE9D208CEF5B00BA8590 /* Base2DTextViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -276,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6717538E2084513200ADCD8D /* Assets.xcassets in Resources */,
+				6723EE9A208CEBD300BA8590 /* font.txt in Resources */,
 				6723EE95208CCA0F00BA8590 /* pic_icon.png in Resources */,
 				671753B920847C3200ADCD8D /* Default-568h@2x.png in Resources */,
 			);
@@ -302,9 +320,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6723EE9E208CEF5B00BA8590 /* Base2DTextViewController.swift in Sources */,
 				671753B520846DD500ADCD8D /* ViewController.swift in Sources */,
 				6723EE93208C258100BA8590 /* Base2DViewController.swift in Sources */,
 				671753872084512800ADCD8D /* AppDelegate.swift in Sources */,
+				6723EE9C208CEF1600BA8590 /* Base2DTextUIView.swift in Sources */,
 				67420A322086F03F002D0EC0 /* Base2DUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

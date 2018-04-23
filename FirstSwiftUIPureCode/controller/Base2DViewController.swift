@@ -27,9 +27,9 @@ class Base2DViewController: UIViewController {
         self.view?.addSubview(self.base2DView!)
         
         //延时调用
-        DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(3/*second*/)) {
-            self.dismiss(animated: true, completion: nil)
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(3/*second*/)) {
+//            self.dismiss(animated: true, completion: nil)
+//        }
     }
     
     override func didReceiveMemoryWarning() {
