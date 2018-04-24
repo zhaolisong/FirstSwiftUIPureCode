@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var tableRowNumberOfSection1 = 10;
+    var tableRowNumberOfSection2 = 20;
     // 声明 tableview
     var tableView : UITableView?
 
@@ -26,19 +28,92 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //设置tableview的代理对象
         self.tableView!.delegate = self
         self.tableView!.dataSource = self
-        self.tableView!.register(UITableViewCell.self, forCellReuseIdentifier:"cell")
+        //单元格复用
+        self.tableView!.register(UITableViewCell.self, forCellReuseIdentifier:"cell"/*为了提供表格显示性能，已创建完成的单元需重复使用*/)
         
         //将tableview添加到view试图上
         self.view?.addSubview(self.tableView!)
+
         //decelerationRate 属性调整 UIScrollView、UITableView、UICollectionView 滚动数据
-        //使用
+        //方式1  使用系统定义的常量值:
+        //  UIScrollViewDecelerationRateNormal：正常减速（默认值，0.998）
+        //  UIScrollViewDecelerationRateFast：快速减速（0.99）
+        //方式2  设置自定义值:
+        //  decelerationRate 类型为 CGFloat，其范围是（0.0，1.0）
+        self.tableView!.decelerationRate = 0.8
         
+        //创建表头标签
+        let frame = CGRect(x:0, y:0, width:self.view.bounds.size.width, height:30)
+        let headerLabel = UILabel(frame: frame)
+        headerLabel.backgroundColor = UIColor.black
+        headerLabel.textColor = UIColor.white
+        headerLabel.numberOfLines = 0
+        headerLabel.lineBreakMode = .byWordWrapping
+        headerLabel.text = "常见 UIKit 控件"
+        headerLabel.font = UIFont.italicSystemFont(ofSize: 20)
+        self.tableView!.tableHeaderView = headerLabel
+        
+        // FileManager.default 文件操作
     }
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return 200; }
+    
+    //表视图有2个分区
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2;
+    }
+    //表视图分区里的行数
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return section==0 ? tableRowNumberOfSection1 : tableRowNumberOfSection2;
+    }
+    //返回指定分区的头部
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return section==0 ? "section001" : "section002"
+    }
+    //返回指定分区的尾部
+    func tableView(_ tableView:UITableView, titleForFooterInSection section:Int)->String? {
+        return "有\(section==1 ? tableRowNumberOfSection1 : tableRowNumberOfSection2)个控件"
+    }
+    //修改删除按钮的文字
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "删"
+    }
+    //滑动删除必须实现的方法
+    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        print("删除\(indexPath.row)")
+        if (indexPath.section==1) {
+            tableRowNumberOfSection1 = tableRowNumberOfSection1-1
+        } else {
+            tableRowNumberOfSection2 = tableRowNumberOfSection2-1
+        }
+
+        self.tableView?.deleteRows(at: [indexPath], with: .top)
+    }
+    //滑动删除
+    public func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return UITableViewCellEditingStyle.delete;
+    }
+    // UITableViewDelegate 方法，处理列表项的选中事件
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView!.deselectRow(at: indexPath, animated: true)
+        let itemString = String(format:"0000%i", indexPath.row+1)
+        let allertController = UIAlertController(title: "提示：", message: "你选中了【\(itemString)】", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "确定", style: .default, handler: nil)
+        allertController.addAction(okAction)
+        self.present(allertController, animated: true, completion: nil)
+    }
+    //创建各单元显示内容(创建参数indexPath指定的单元）
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
-        cell.textLabel!.text = String(format:"0000%i", indexPath.row+1)
+        //同一形式的单元格重复使用，在声明时已注册("cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.accessoryType = .disclosureIndicator
+        if (indexPath.section==0) {
+            let image = UIImage(named:"heart.png")
+            cell.imageView?.image = image
+        }
+        else {
+            cell.detailTextLabel?.text = String(format:"这里是【00%i--00%i】介绍", indexPath.section+1, indexPath.row+1)
+        }
+        cell.textLabel!.text = String(format:"00%i--00%i", indexPath.section+1, indexPath.row+1)
         return cell
         
     }
@@ -76,6 +151,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if (indexPath.row==1) {
             let base2DTextVC = Base2DTextViewController()
             self.navigationController?.pushViewController(base2DTextVC , animated: true)
+        }
+        if (indexPath.row==2) {
+            let pageScrollVC = PageScrollViewController()
+            self.navigationController?.pushViewController(pageScrollVC, animated: true)
+        }
+        if (indexPath.row==3) {
+            let gravityVC = GravityViewController()
+            self.navigationController?.pushViewController(gravityVC, animated: true)
         }
         return indexPath;
     }

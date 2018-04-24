@@ -15,6 +15,8 @@ class Base2DViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Base2DViewVC"
+        //关闭导航栏半透明效果，这样布局就会从导航栏下面开始了
+        self.navigationController?.navigationBar.isTranslucent = false
         // 加载 tableview
         setViews()
     }
