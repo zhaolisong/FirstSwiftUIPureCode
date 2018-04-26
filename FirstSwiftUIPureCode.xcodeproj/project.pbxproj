@@ -18,10 +18,10 @@
 		6723EE9A208CEBD300BA8590 /* font.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6723EE99208CEBD300BA8590 /* font.txt */; };
 		6723EE9C208CEF1600BA8590 /* Base2DTextUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6723EE9B208CEF1600BA8590 /* Base2DTextUIView.swift */; };
 		6723EE9E208CEF5B00BA8590 /* Base2DTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6723EE9D208CEF5B00BA8590 /* Base2DTextViewController.swift */; };
+		673A29042091B4F300B72BF6 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 673A29032091B4F200B72BF6 /* heart.png */; };
 		67420A322086F03F002D0EC0 /* Base2DUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67420A312086F03F002D0EC0 /* Base2DUIView.swift */; };
 		67F177E1208ECD9C00A87072 /* PageScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F177E0208ECD9C00A87072 /* PageScrollViewController.swift */; };
 		67F177E3208EDC1F00A87072 /* GravityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F177E2208EDC1F00A87072 /* GravityViewController.swift */; };
-		67F177E5208EF3F400A87072 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 67F177E4208EF3F400A87072 /* heart.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,10 +59,10 @@
 		6723EE99208CEBD300BA8590 /* font.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = font.txt; sourceTree = "<group>"; };
 		6723EE9B208CEF1600BA8590 /* Base2DTextUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base2DTextUIView.swift; path = FirstSwiftUIPureCode/view/Base2DTextUIView.swift; sourceTree = SOURCE_ROOT; };
 		6723EE9D208CEF5B00BA8590 /* Base2DTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base2DTextViewController.swift; sourceTree = "<group>"; };
+		673A29032091B4F200B72BF6 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		67420A312086F03F002D0EC0 /* Base2DUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base2DUIView.swift; sourceTree = "<group>"; };
 		67F177E0208ECD9C00A87072 /* PageScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageScrollViewController.swift; sourceTree = "<group>"; };
 		67F177E2208EDC1F00A87072 /* GravityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravityViewController.swift; sourceTree = "<group>"; };
-		67F177E4208EF3F400A87072 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heart.png; path = ../../../../../../heart.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +155,7 @@
 		6723EE97208CCAB500BA8590 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				67F177E4208EF3F400A87072 /* heart.png */,
+				673A29032091B4F200B72BF6 /* heart.png */,
 				6723EE94208CCA0F00BA8590 /* pic_icon.png */,
 			);
 			path = images;
@@ -303,8 +303,8 @@
 			files = (
 				6717538E2084513200ADCD8D /* Assets.xcassets in Resources */,
 				6723EE9A208CEBD300BA8590 /* font.txt in Resources */,
-				67F177E5208EF3F400A87072 /* heart.png in Resources */,
 				6723EE95208CCA0F00BA8590 /* pic_icon.png in Resources */,
+				673A29042091B4F300B72BF6 /* heart.png in Resources */,
 				671753B920847C3200ADCD8D /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
