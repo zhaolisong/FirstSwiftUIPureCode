@@ -19,6 +19,10 @@
 		6723EE9C208CEF1600BA8590 /* Base2DTextUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6723EE9B208CEF1600BA8590 /* Base2DTextUIView.swift */; };
 		6723EE9E208CEF5B00BA8590 /* Base2DTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6723EE9D208CEF5B00BA8590 /* Base2DTextViewController.swift */; };
 		673A29042091B4F300B72BF6 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 673A29032091B4F200B72BF6 /* heart.png */; };
+		673A29072091B84100B72BF6 /* MvvmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673A29062091B84100B72BF6 /* MvvmView.swift */; };
+		673A29092091B86B00B72BF6 /* MvvmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673A29082091B86B00B72BF6 /* MvvmModel.swift */; };
+		673A290B2091B88700B72BF6 /* MvvmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673A290A2091B88700B72BF6 /* MvvmViewModel.swift */; };
+		673A290D2091D04D00B72BF6 /* MvvmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673A290C2091D04D00B72BF6 /* MvvmViewController.swift */; };
 		67420A322086F03F002D0EC0 /* Base2DUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67420A312086F03F002D0EC0 /* Base2DUIView.swift */; };
 		67F177E1208ECD9C00A87072 /* PageScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F177E0208ECD9C00A87072 /* PageScrollViewController.swift */; };
 		67F177E3208EDC1F00A87072 /* GravityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F177E2208EDC1F00A87072 /* GravityViewController.swift */; };
@@ -60,6 +64,10 @@
 		6723EE9B208CEF1600BA8590 /* Base2DTextUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base2DTextUIView.swift; path = FirstSwiftUIPureCode/view/Base2DTextUIView.swift; sourceTree = SOURCE_ROOT; };
 		6723EE9D208CEF5B00BA8590 /* Base2DTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base2DTextViewController.swift; sourceTree = "<group>"; };
 		673A29032091B4F200B72BF6 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		673A29062091B84100B72BF6 /* MvvmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmView.swift; sourceTree = "<group>"; };
+		673A29082091B86B00B72BF6 /* MvvmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmModel.swift; sourceTree = "<group>"; };
+		673A290A2091B88700B72BF6 /* MvvmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmViewModel.swift; sourceTree = "<group>"; };
+		673A290C2091D04D00B72BF6 /* MvvmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmViewController.swift; sourceTree = "<group>"; };
 		67420A312086F03F002D0EC0 /* Base2DUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base2DUIView.swift; sourceTree = "<group>"; };
 		67F177E0208ECD9C00A87072 /* PageScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageScrollViewController.swift; sourceTree = "<group>"; };
 		67F177E2208EDC1F00A87072 /* GravityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravityViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +127,7 @@
 				67420A352086F065002D0EC0 /* model */,
 				67420A342086F053002D0EC0 /* controller */,
 				67420A332086F046002D0EC0 /* view */,
+				673A29052091B52500B72BF6 /* view_model */,
 				671753862084512800ADCD8D /* AppDelegate.swift */,
 				6717538D2084513200ADCD8D /* Assets.xcassets */,
 				671753922084513300ADCD8D /* Info.plist */,
@@ -169,11 +178,20 @@
 			path = help;
 			sourceTree = "<group>";
 		};
+		673A29052091B52500B72BF6 /* view_model */ = {
+			isa = PBXGroup;
+			children = (
+				673A290A2091B88700B72BF6 /* MvvmViewModel.swift */,
+			);
+			path = view_model;
+			sourceTree = "<group>";
+		};
 		67420A332086F046002D0EC0 /* view */ = {
 			isa = PBXGroup;
 			children = (
 				6723EE9B208CEF1600BA8590 /* Base2DTextUIView.swift */,
 				67420A312086F03F002D0EC0 /* Base2DUIView.swift */,
+				673A29062091B84100B72BF6 /* MvvmView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -186,6 +204,7 @@
 				6723EE9D208CEF5B00BA8590 /* Base2DTextViewController.swift */,
 				67F177E0208ECD9C00A87072 /* PageScrollViewController.swift */,
 				67F177E2208EDC1F00A87072 /* GravityViewController.swift */,
+				673A290C2091D04D00B72BF6 /* MvvmViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -193,6 +212,7 @@
 		67420A352086F065002D0EC0 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				673A29082091B86B00B72BF6 /* MvvmModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -330,11 +350,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				673A29072091B84100B72BF6 /* MvvmView.swift in Sources */,
+				673A29092091B86B00B72BF6 /* MvvmModel.swift in Sources */,
+				673A290B2091B88700B72BF6 /* MvvmViewModel.swift in Sources */,
 				6723EE9E208CEF5B00BA8590 /* Base2DTextViewController.swift in Sources */,
 				671753B520846DD500ADCD8D /* ViewController.swift in Sources */,
 				6723EE93208C258100BA8590 /* Base2DViewController.swift in Sources */,
 				67F177E3208EDC1F00A87072 /* GravityViewController.swift in Sources */,
 				67F177E1208ECD9C00A87072 /* PageScrollViewController.swift in Sources */,
+				673A290D2091D04D00B72BF6 /* MvvmViewController.swift in Sources */,
 				671753872084512800ADCD8D /* AppDelegate.swift in Sources */,
 				6723EE9C208CEF1600BA8590 /* Base2DTextUIView.swift in Sources */,
 				67420A322086F03F002D0EC0 /* Base2DUIView.swift in Sources */,

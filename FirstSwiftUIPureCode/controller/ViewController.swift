@@ -1,20 +1,19 @@
-//
-//  ViewController.swift
-//  FirstSwiftUIPureCode
-//
-//  Created by ZhaoLisong on 2018/4/16.
-//  Copyright © 2018 ZhaoLisong. All rights reserved.
-//
-
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+// 访问限制符：open/public/internal/fileprivate/private
+// private : 只在作用域内访问
+// fileprivate : 只在定义的文件内访问
+// internal : 在源代码所在的整个模块都可以访问
+// public : 可以被任何人访问; 但其他module中不可以override和继承
+// open : 可以被任何人使用，包括override和继承
+open class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var tableRowNumberOfSection1 = 10;
     var tableRowNumberOfSection2 = 20;
     // 声明 tableview
     var tableView : UITableView?
+    
 
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         self.title = "MyViewVC"
         // 加载 tableview
@@ -22,6 +21,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     // 创建 setViews
     func setViews() {
+        self.edgesForExtendedLayout=[]
         //初始化tableview并设置frame
         self.tableView = UITableView(frame:self.view!.frame)
         
@@ -58,7 +58,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     //表视图有2个分区
-    func numberOfSections(in tableView: UITableView) -> Int {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         return 2;
     }
     //表视图分区里的行数
@@ -66,15 +66,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return section==0 ? tableRowNumberOfSection1 : tableRowNumberOfSection2;
     }
     //返回指定分区的头部
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return section==0 ? "section001" : "section002"
     }
     //返回指定分区的尾部
-    func tableView(_ tableView:UITableView, titleForFooterInSection section:Int)->String? {
+    public func tableView(_ tableView:UITableView, titleForFooterInSection section:Int)->String? {
         return "有\(section==1 ? tableRowNumberOfSection1 : tableRowNumberOfSection2)个控件"
     }
     //修改删除按钮的文字
-    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+    public func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
         return "删"
     }
     //滑动删除必须实现的方法
@@ -160,10 +160,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let gravityVC = GravityViewController()
             self.navigationController?.pushViewController(gravityVC, animated: true)
         }
+        if (indexPath.row==4) {
+            let mvvmVC = MvvmViewController()
+            self.navigationController?.pushViewController(mvvmVC, animated: true)
+        }
         return indexPath;
     }
 
-    override func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
